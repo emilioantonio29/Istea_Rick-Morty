@@ -1,0 +1,64 @@
+
+<div class="jumbotron jumbotron-fluid" style="margin-bottom: 0px;">
+    <div class="container">
+        <h1>LOGIN</h1>
+        <br>      
+        <p style="color: black;"></p>
+        <p style="color: black;"></p>
+        <br>
+    </div>
+</div>
+
+
+{{#if sesionIniciada}}
+  <div class="container">
+    <br>
+    <p>{{bienvenida}}</p>      
+    <hr>
+    <div class="card" style="width:400px">
+        <div class="card-body">
+            <h4 class="card-title">Pagina para buscar Personajes</h4>
+            <p class="card-text">Example text.</p>
+            <a href="/personajes" class="btn btn-primary" style="width: 150px;">Ir a la Pagina</a>
+        </div>
+    </div>
+  </div>
+{{else}}
+  <div class="container">
+      <br>
+      <div class="">
+      <div class="d-flex justify-content-center">
+                <p>Bienvenid@...</p>      
+      </div>
+
+      <hr>
+      <div class="d-flex justify-content-center">
+        <div class="card" style="width:400px; background-color: white">
+            <div class="card-body">
+                <p style="color: #1F2739;">Inicio de Sesión:</p>
+                <br>
+                <form action="/log" method="POST" role="form" autocomplete="off">
+                    <label for="user" style="color: #1F2739;">Usuario:</label>
+                    <input id="user" class="form-control" type="email" name="username" class="ml-auto" required placeholder="emilio@test.com" style="background-color: rgb(196, 196, 196);"/>
+                    <label for="pass" style="color: #1F2739;">Password:</label>
+                    <input id="pass" class="form-control" type="password" name="password" class="ml-auto" required placeholder="123456789" style="background-color: rgb(196, 196, 196);"/>
+                    <br>
+                    {{!-- <button onclick="login()" class="btn btn-secondary    " value="" style="color: yellow;">Iniciar Sesión</button> --}}
+                    <input type="submit" class="btn btn-dark" value="Iniciar Sesión">
+                </form>
+            </div>
+        </div>
+
+      </div>
+      <br>
+    <div class="d-flex justify-content-center">
+        <p>{{sesionIncorrecta}}</p>
+
+    </div>
+
+  </div>
+  </div>
+{{/if}}
+
+<script src="index2.js"></script>
+
